@@ -1,0 +1,300 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@200&display=swap');
+body {
+    background: #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+h1, p{
+    color: white;
+    text-align: center;
+    font-family: 'Fira Sans', sans-serif;
+}
+
+a {
+    color: gold;
+}
+
+.lightrope {
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    z-index: 1;
+    margin: -15px 0 0 0;
+    padding: 0;
+    pointer-events: none;
+    width: 100%;
+}
+
+.lightrope li {
+    position: relative;
+    animation-fill-mode: both;
+    animation-iteration-count: infinite;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: block;
+    width: 12px;
+    height: 28px;
+    border-radius: 50%;
+    margin: 20px;
+    display: inline-block;
+    background: rgba(0, 247, 165, 1);
+    box-shadow: 0px 4.6666666667px 24px 3px rgba(0, 247, 165, 1);
+    animation-name: flash-1;
+    animation-duration: 2s;
+}
+
+.lightrope li:nth-child(2n+1) {
+    background: rgba(0, 255, 255, 1);
+    box-shadow: 0px 4.6666666667px 24px 3px rgba(0, 255, 255, 0.5);
+    animation-name: flash-2;
+    animation-duration: 0.4s;
+}
+
+.lightrope li:nth-child(4n+2) {
+    background: rgba(247, 0, 148, 1);
+    box-shadow: 0px 4.6666666667px 24px 3px rgba(247, 0, 148, 1);
+    animation-name: flash-3;
+    animation-duration: 1.1s;
+}
+
+.lightrope li:nth-child(odd) {
+    animation-duration: 1.8s;
+}
+
+.lightrope li:nth-child(3n+1) {
+    animation-duration: 1.4s;
+}
+
+.lightrope li:before {
+    content: "";
+    position: absolute;
+    background: #222;
+    width: 10px;
+    height: 9.3333333333px;
+    border-radius: 3px;
+    top: -4.6666666667px;
+    left: 1px;
+}
+
+.lightrope li:after {
+    content: "";
+    top: -14px;
+    left: 9px;
+    position: absolute;
+    width: 52px;
+    height: 18.6666666667px;
+    border-bottom: solid #222 2px;
+    border-radius: 50%;
+}
+
+.lightrope li:last-child:after {
+    content: none;
+}
+
+.lightrope li:first-child {
+    margin-left: -40px;
+}
+
+@keyframes flash-1 {
+
+    0%,
+    100% {
+        background: rgba(0, 247, 165, 1);
+        box-shadow: 0px 4.6666666667px 24px 3px rgba(0, 247, 165, 1);
+    }
+
+    50% {
+        background: rgba(0, 247, 165, 0.4);
+        box-shadow: 0px 4.6666666667px 24px 3px rgba(0, 247, 165, 0.2);
+    }
+}
+
+@keyframes flash-2 {
+
+    0%,
+    100% {
+        background: rgba(0, 255, 255, 1);
+        box-shadow: 0px 4.6666666667px 24px 3px rgba(0, 255, 255, 1);
+    }
+
+    50% {
+        background: rgba(0, 255, 255, 0.4);
+        box-shadow: 0px 4.6666666667px 24px 3px rgba(0, 255, 255, 0.2);
+    }
+}
+
+@keyframes flash-3 {
+
+    0%,
+    100% {
+        background: rgba(247, 0, 148, 1);
+        box-shadow: 0px 4.6666666667px 24px 3px rgba(247, 0, 148, 1);
+    }
+
+    50% {
+        background: rgba(247, 0, 148, 0.4);
+        box-shadow: 0px 4.6666666667px 24px 3px rgba(247, 0, 148, 0.2);
+    }
+}
+
+.container {
+    position: relative;
+    width: 380px;
+    height: 380px;
+    margin: auto;
+    background: #0b1a5e;
+    border-radius: 120px;
+}
+
+.tree {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 13%;
+    top: 5%;
+}
+
+
+.tree-triangle3 {
+    position: absolute;
+    width: 66%;
+    height: 36%;
+    bottom: 20%;
+    left: 3.5%;
+    background: #114408;
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+
+.tree-triangle2 {
+    position: absolute;
+    width: 53%;
+    height: 33%;
+    bottom: 35%;
+    left: 10%;
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    background: #1a5410;
+    z-index: 2;
+}
+
+.tree-triangle1 {
+    position: absolute;
+    width: 42%;
+    height: 25%;
+    bottom: 50%;
+    left: 15.5%;
+    background: #215a17;
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    z-index: 3;
+}
+
+.trunk {
+    position: absolute;
+    width: 10%;
+    height: 16%;
+    background: #54230e;
+    z-index: 1;
+    bottom: 0;
+    left: 44%;
+}
+
+.ornament {
+    position: absolute;
+    width: 10%;
+    height: 10%;
+    border-radius: 50%;
+    box-shadow: 0 0 3px orange;
+    background: rgb(253, 152, 36);
+    z-index: 4;
+}
+
+.shine {
+    position: absolute;
+    width: 55%;
+    height: 55%;
+    top: 10%;
+    right: 11%;
+    border-radius: 50%;
+    background: #fff0f3;
+}
+
+.or1 {
+    left: 26%;
+    top: 36%;
+}
+
+.or2 {
+    left: 40%;
+    top: 45%;
+}
+
+.or3 {
+    left: 19%;
+    top: 52%;
+}
+
+.or4 {
+    left: 35%;
+    top: 61%;
+}
+
+.or5 {
+    left: 51%;
+    top: 69%;
+}
+
+.or6 {
+    left: 15%;
+    top: 68%;
+}
+
+.star {
+    position: absolute;
+    width: 20%;
+    height: 20%;
+    background: white;
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    left: 39.5%;
+    top: 16%;
+    z-index: 4;
+}
+
+.star-highlight {
+    position: absolute;
+    width: 20%;
+    height: 20%;
+    background: white;
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 50% 70%, 50% 60%, 50% 46%, 50% 36%);
+    left: 39.5%;
+    top: 16%;
+    z-index: 4;
+}
+
+.star-light {
+    position: absolute;
+    width: 20%;
+    height: 20%;
+    background: rgb(253, 152, 36);;
+    filter: opacity(.7);
+    border-radius: 50%;
+    left: 39.5%;
+    top: 16%;
+    z-index: 3;
+    animation: star 3s ease-in-out infinite;
+}
+
+@keyframes star {
+    100% {
+        transform: scale(.5);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    0% {
+        transform: scale(.5);
+    }
+}
